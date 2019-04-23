@@ -1,0 +1,56 @@
+extends ../layout/default
+
+block content
+  main.main
+        // Breadcrumb
+        ol.breadcrumb
+          li.breadcrumb-item Administração
+          li.breadcrumb-item Configuração
+          li.breadcrumb-item.active Drivers
+        .container-fluid
+          .animated.fadeIn
+            .row
+              .col-md-12
+                  .card
+                    .card-header
+                      i.fa.fa-align-justify
+                      |  Drivers
+                    .card-body   
+                      != messages()  
+                      table.table.table-striped
+                        thead
+                          tr
+                            th Ações
+                            th Nome / Razao Social
+                            th eMail
+                            th CPF / CNPJ
+                            th Endereço
+                            th Bairro
+                            th Cidade
+                            th Estado
+                            th Ativo                            
+                        tbody                                                  
+                             each customer in list
+                              tr
+                                td 
+                                  .form-group
+                                    form.form-horizontal(action='/customers/delete/#{customer.id}', method='post')                                      
+                                      a(href='/customers/edit/#{customer.id}')
+                                        button(type='button', style='background-color:transparent; border-color:transparent;')
+                                          i.fa.fa-edit                                                                                                              
+                                      span                                      
+                                      button(type='submit', style='background-color:transparent; border-color:transparent;')
+                                        i.fa.fa-remove 
+                                td #{customer.fullname}
+                                td #{customer.email} 
+                                td #{customer.businesscode}
+                                td #{customer.address1}                                
+                                td #{customer.district}
+                                td #{customer.city}
+                                td #{customer.province}  
+                                td #{ativo = customer.active==true?'Sim':'Não' }                                                                                             
+                       if (pages > 1)
+                        ul.pagination
+                          != createPagination(pages, page)  
+                      a(href='/customers/new', target='_top')    
+                       button.btn.btn-primary.btn-sm(type='button') Novo

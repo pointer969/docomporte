@@ -1,0 +1,54 @@
+extends ../layout/default
+
+block content
+  main.main
+        // Breadcrumb
+        ol.breadcrumb
+          li.breadcrumb-item Administração
+          li.breadcrumb-item Configurações
+          li.breadcrumb-item Devices
+          li.breadcrumb-item.active Liberação
+        .container-fluid
+          .animated.fadeIn
+            .row
+              .col-md-12
+                  .card
+                    .card-header
+                      i.fa.fa-align-justify
+                      |  Liberação de Devices
+                    .card-body   
+                      != messages()  
+                      table.table.table-striped
+                        thead
+                          tr
+                            th Ações
+                            th Device
+                            th Descrição
+                            th Ativo
+                            th Criado em                             
+                            th Modificado em 
+                            th Modificado por
+                            
+                        tbody                                                  
+                             each device in list
+                              tr
+                                td 
+                                  .form-group
+                                    form.form-horizontal(action='/devices/delete/#{device.id}', method='post')                                      
+                                      a(href='/devices/edit/#{device.id}')
+                                        button(type='button', style='background-color:transparent; border-color:transparent;')
+                                          i.fa.fa-edit                                                                                                              
+                                      span                                      
+                                      button(type='submit', style='background-color:transparent; border-color:transparent;')
+                                        i.fa.fa-remove 
+                                td #{device.device}
+                                td #{device.description} 
+                                td #{ativo = device.active==true?'Sim':'Não' }                                
+                                td #{formatDate(device.createdAt)}                                
+                                td #{formatDate(device.updatedAt)}
+                                td #{(device.modifiedBy)}                                                                                             
+                       if (pages > 1)
+                        ul.pagination
+                          != createPagination(pages, page)  
+                      //- a(href='/devices/new', target='_top')    
+                      //-  button.btn.btn-primary.btn-sm(type='button') Novo

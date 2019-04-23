@@ -1,0 +1,35 @@
+image: docker:latest
+
+services:
+  - docker:dind
+
+variables:
+  DOCKER_DRIVER: overlay
+  DOCKER_GROUP: driveonauto
+
+stages:
+  - build-docker
+  - deploy
+
+run-build-docker:
+  stage: build-docker
+  before_script:
+    - docker login -u $DRIVEON_DOCKER_USER -p $DRIVEON_DOCKER_PASSWORD
+  script:
+    - docker build -t $DOCKER_GROUP/$CI_PROJECT_NAME:$CI_PIPELINE_ID .
+    - docker push $DOCKER_GROUP/$CI_PROJECT_NAME:$CI_PIPELINE_ID
+  after_script:
+    - docker logout
+  only:
+    - master
+
+run-deploy:
+  stage: deploy
+  before_script:
+    - export PROJECT_DOCKER_IMAGE=$DOCKER_GROUP/$CI_PROJECT_NAME:$CI_PIPELINE_ID
+  script:
+    - docker stack deploy -c docker-compose.yml bilbo-prod
+  tags:
+    - drive-on
+  only:
+    - master

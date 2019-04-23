@@ -1,0 +1,92 @@
+extends ../layout/default
+
+block content
+  main.main
+        // Breadcrumb
+        ol.breadcrumb
+          li.breadcrumb-item Administração
+          li.breadcrumb-item Configurações
+          li.breadcrumb-item Drivers
+          li.breadcrumb-item.active Detalhes
+        .container-fluid
+          .animated.fadeIn
+            .row
+              .col-md-12
+                  .card
+                    .card-header
+                      i.fa.fa-edit
+                      |  Drivers - Edição
+                    .card-body   
+                      != messages()  
+                      form.form-horizontal(action='/customers/update/#{customers.id}', method='post')
+                        .form-group
+                          label.form-control-label(for='fullname') Nome / Razao Social
+                          .controls
+                            .input-group
+                              input#fullname.form-control(name='fullname',size='100', type='text', value='#{customers.fullname}')
+                        .form-group
+                          label.form-control-label(for='email') eMail
+                          .controls
+                            .input-group
+                              input#email.form-control(name='email',size='100', type='email', value='#{customers.email}')
+                        .form-group
+                          label.form-control-label(for='businesscode') CPF / CNPJ
+                          .controls
+                            .input-group
+                              input#businesscode.form-control(name='businesscode',size='20', type='text', value='#{customers.businesscode}')
+                        .form-group
+                          label.form-control-label(for='address1') Endereço
+                          .controls
+                            .input-group
+                              input#address1.form-control(name='address1',size='100', type='text', value='#{customers.address1}')
+                        .form-group
+                          label.form-control-label(for='address2') Complemento
+                          .controls
+                            .input-group
+                              input#address2.form-control(name='address2',size='100', type='text', value='#{customers.address2}')
+                        .form-group
+                          label.form-control-label(for='zipcode') CEP
+                          .controls
+                            .input-group
+                              input#zipcode.form-control(name='zipcode',size='16', type='text', value='#{customers.zipcode}')
+                        .form-group
+                          label.form-control-label(for='district') Bairro
+                          .controls
+                            .input-group
+                              input#district.form-control(name='district',size='100', type='text', value='#{customers.district}')
+                        .form-group
+                          label.form-control-label(for='city') Cidade
+                          .controls
+                            .input-group
+                              input#city.form-control(name='city',size='16', type='text', value='#{customers.city}')                                   
+                        .form-group
+                          label.form-control-label(for='province') Estado
+                          .controls
+                            .input-group
+                              input#province.form-control(name='province',size='16', type='text', value='#{customers.province}')
+                        .form-group
+                          label.form-control-label(for='country') Pais
+                          .controls
+                            .input-group
+                              input#country.form-control(name='country',size='16', type='text', value='#{customers.country}')  
+                        .form-group
+                          label.col-md-3.form-control-label(for='activedYN') Ativo?
+                          .controls
+                            .col-md-9
+                              select#active.form-control-sm(name='active', disabled=false)
+                                option(value='true', selected=customers.active == true) Sim
+                                option(value='false', selected=customers.active == false) Não
+                        .form-group
+                          label.form-control-label(for='createdAt') Criado em
+                          .controls
+                            .input-group
+                              input#createdAt.form-control(size='16', type='text', readonly=true, value='#{customers.createdAt}')                                                                                                              
+                        .form-actions
+                          button.btn.btn-sm.btn-success(type='submit')
+                            i.fa.fa-edit
+                            |  Atualizar   
+                          span     
+                          a(href='/customers/show/#{customers.id}')                                           
+                            button.btn.btn-sm.btn-danger(type='button')
+                              i.fa.fa-ban
+                              |  Cancelar                               

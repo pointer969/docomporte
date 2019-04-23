@@ -1,0 +1,61 @@
+extends ../layout/default
+
+block content
+  main.main
+        // Breadcrumb
+        ol.breadcrumb
+          li.breadcrumb-item Administração
+          li.breadcrumb-item Configurações
+          li.breadcrumb-item Parâmetros
+          li.breadcrumb-item Valor Extensivo
+          li.breadcrumb-item.active Detalhes
+        .container-fluid
+          .animated.fadeIn
+            .row
+              .col-md-12
+                  .card
+                    .card-header
+                      i.fa.fa-edit
+                      |  Valor Extensivo - Edição
+                    .card-body   
+                      != messages()  
+                      form.form-horizontal(action='/extensivevalues/update/#{extvalueses.id}', method='post')
+                        .form-group
+                          label.form-control-label(for='classasa') Classe
+                          .controls
+                            .input-group
+                              select#select.form-control-sm(name='class')
+                               if extclasses
+                                each classes in extclasses
+                                  option(value='#{classes.id}', selected=classes.id==extvalueses.id) #{classes.description}  
+                        .form-group
+                          label.form-control-label(for='value') Valor
+                          .controls
+                            .input-group
+                              input#value.form-control(name='value',size='16', type='text', value='#{extvalueses.value}', readonly=false)
+                        .form-group
+                          label.form-control-label(for='description') Descrição
+                          .controls
+                            .input-group
+                              input#description.form-control(name='description',size='100', type='text', value='#{extvalueses.description}', readonly=false) 
+                        .form-group
+                          label.col-md-3.form-control-label(for='activedYN') Ativo?
+                          .controls
+                            .col-md-9
+                              select#active.form-control-sm(name='active', disabled=false)
+                                option(value='true', selected=extvalueses.active == true) Sim
+                                option(value='false', selected=extvalueses.active == false) Não
+                        .form-group
+                          label.form-control-label(for='createdAt') Criado em
+                          .controls
+                            .input-group
+                              input#createdAt.form-control(size='16', type='text', readonly=true, value='#{extvalueses.createdAt}')                                                                                                              
+                        .form-actions
+                          button.btn.btn-sm.btn-success(type='submit')
+                            i.fa.fa-edit
+                            |  Atualizar   
+                          span     
+                          a(href='/extensivevalues/show/#{extvalueses.id}')                                           
+                            button.btn.btn-sm.btn-danger(type='button')
+                              i.fa.fa-ban
+                              |  Cancelar                               

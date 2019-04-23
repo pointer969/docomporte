@@ -1,0 +1,55 @@
+extends ../layout/default
+
+block content
+  main.main
+        // Breadcrumb
+        ol.breadcrumb
+          li.breadcrumb-item Administração
+          li.breadcrumb-item Configurações
+          li.breadcrumb-item Parâmetros
+          li.breadcrumb-item.active Tipos Extensivos
+        .container-fluid
+          .animated.fadeIn
+            .row
+              .col-md-12
+                  .card
+                    .card-header
+                      i.fa.fa-align-justify
+                      |  Tipos Extensivos
+                    .card-body   
+                      != messages()  
+                      table.table.table-striped
+                        thead
+                          tr
+                            th Ações
+                            th Classe
+                            th Descrição
+                            th Percentual
+                            th Ativo
+                            th Criado em                             
+                            th Modificado em 
+                            th Modificado por                            
+                        tbody                                                  
+                             each classes in list
+                              tr
+                                td 
+                                  .form-group
+                                    form.form-horizontal(action='/extclasses/delete/#{classes.id}', method='post')                                      
+                                      a(href='/extclasses/edit/#{classes.id}')
+                                        button(type='button', style='background-color:transparent; border-color:transparent;')
+                                          i.fa.fa-edit                                                                                                              
+                                      span                                      
+                                      button(type='submit', style='background-color:transparent; border-color:transparent;')
+                                        i.fa.fa-remove 
+                                td #{classes.class}
+                                td #{classes.description} 
+                                td #{classes.rate} 
+                                td #{ativo = classes.active==true?'Sim':'Não' }                                
+                                td #{formatDate(classes.createdAt)}                                
+                                td #{formatDate(classes.updatedAt)}
+                                td #{(classes.modifiedBy)}                                                                                             
+                       if (pages > 1)
+                        ul.pagination
+                          != createPagination(pages, page)  
+                      a(href='/extclasses/new', target='_top')    
+                       button.btn.btn-primary.btn-sm(type='button') Novo

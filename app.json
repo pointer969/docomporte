@@ -1,0 +1,17 @@
+{
+  "name": "driveon-enterprise",
+  "description": "Drive On Analytics Enterprise Platform",
+  "scripts": {
+  },
+  "env": {
+    "env": "dev"
+  },
+  "formation": {
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+
+  ]
+}

@@ -1,0 +1,200 @@
+.zidebar {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    overflow: hidden;
+    z-index: 2000; }
+    .zidebar.collapsed {
+      width: 40px; }
+    @media (min-width: 768px) {
+      .zidebar {
+        top: 10px;
+        bottom: 10px;
+        transition: width 500ms; } }
+    @media (min-width: 768px) and (max-width: 991px) {
+      .zidebar {
+        width: 305px; } }
+    @media (min-width: 992px) and (max-width: 1199px) {
+      .zidebar {
+        width: 390px; } }
+    @media (min-width: 1200px) {
+      .zidebar {
+        width: 460px; } }
+  
+  .zidebar-left {
+    left: 0; }
+    @media (min-width: 768px) {
+      .zidebar-left {
+        left: 10px; } }
+  
+  .zidebar-right {
+    right: 0; }
+    @media (min-width: 768px) {
+      .zidebar-right {
+        right: 10px; } }
+  
+  .zidebar-tabs {
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    background-color: #fff; }
+    .zidebar-left .zidebar-tabs {
+      left: 0; }
+    .zidebar-right .zidebar-tabs {
+      right: 0; }
+    .zidebar-tabs, .zidebar-tabs > ul {
+      position: relative;
+      width: 40px;
+      margin: 0;
+      padding: 0;
+      list-style-type: none; }
+      .zidebar-tabs > li, .zidebar-tabs > ul > li {
+        width: 100%;
+        height: 40px;
+        color: #333;
+        font-size: 12pt;
+        overflow: hidden;
+        transition: all 80ms; }
+        .zidebar-tabs > li:hover, .zidebar-tabs > ul > li:hover {
+          color: #000;
+          background-color: #eee; }
+        .zidebar-tabs > li.active, .zidebar-tabs > ul > li.active {
+          color: #fff;
+          background-color: #0074d9; }
+        .zidebar-tabs > li.disabled, .zidebar-tabs > ul > li.disabled {
+          color: rgba(51, 51, 51, 0.4); }
+          .zidebar-tabs > li.disabled:hover, .zidebar-tabs > ul > li.disabled:hover {
+            background: transparent; }
+          .zidebar-tabs > li.disabled > a, .zidebar-tabs > ul > li.disabled > a {
+            cursor: default; }
+        .zidebar-tabs > li > a, .zidebar-tabs > ul > li > a {
+          display: block;
+          width: 100%;
+          height: 100%;
+          line-height: 40px;
+          color: inherit;
+          text-decoration: none;
+          text-align: center; }
+    .zidebar-tabs > ul + ul {
+      bottom: 0; }
+  
+  .zidebar-content {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    overflow-x: hidden;
+    overflow-y: auto; }
+    .zidebar-left .zidebar-content {
+      left: 40px;
+      right: 0; }
+    .zidebar-right .zidebar-content {
+      left: 0;
+      right: 40px; }
+    .zidebar.collapsed > .zidebar-content {
+      overflow-y: hidden; }
+  
+  .zidebar-pane {
+    display: none;
+    left: 0;
+    right: 0;
+    box-sizing: border-box;
+    padding: 10px 20px; }
+    .zidebar-pane.active {
+      display: block; }
+    @media (min-width: 768px) and (max-width: 991px) {
+      .zidebar-pane {
+        min-width: 265px; } }
+    @media (min-width: 992px) and (max-width: 1199px) {
+      .zidebar-pane {
+        min-width: 350px; } }
+    @media (min-width: 1200px) {
+      .zidebar-pane {
+        min-width: 420px; } }
+  
+  .zidebar-header {
+    margin: -10px -20px 0;
+    height: 40px;
+    padding: 0 20px;
+    line-height: 40px;
+    font-size: 14.4pt;
+    color: #fff;
+    background-color: #0074d9; }
+    .zidebar-right .zidebar-header {
+      padding-left: 40px; }
+  
+  .zidebar-close {
+    position: relative;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    cursor: pointer; }
+    .zidebar-left .zidebar-close {
+      right: 0; }
+    .zidebar-right .zidebar-close {
+      left: 0; }
+  
+  .zidebar-left ~ .zidebar-map {
+    margin-left: 40px; }
+    @media (min-width: 768px) {
+      .zidebar-left ~ .zidebar-map {
+        margin-left: 0; } }
+  
+  .zidebar-right ~ .zidebar-map {
+    margin-right: 40px; }
+    @media (min-width: 768px) {
+      .zidebar-right ~ .zidebar-map {
+        margin-right: 0; } }
+  
+  .zidebar {
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.65); }
+    .zidebar.leaflet-touch {
+      box-shadow: none;
+      border-right: 2px solid rgba(0, 0, 0, 0.2); }
+    @media (min-width: 768px) {
+      .zidebar {
+        border-radius: 4px; }
+        .zidebar.leaflet-touch {
+          border: 2px solid rgba(0, 0, 0, 0.2); } }
+  
+  @media (min-width: 768px) {
+    .zidebar-left ~ .zidebar-map .leaflet-left {
+      transition: left 500ms; } }
+  
+  @media (min-width: 768px) and (max-width: 991px) {
+    .zidebar-left ~ .zidebar-map .leaflet-left {
+      left: 315px; } }
+  
+  @media (min-width: 992px) and (max-width: 1199px) {
+    .zidebar-left ~ .zidebar-map .leaflet-left {
+      left: 400px; } }
+  
+  @media (min-width: 1200px) {
+    .zidebar-left ~ .zidebar-map .leaflet-left {
+      left: 470px; } }
+  
+  @media (min-width: 768px) {
+    .zidebar-left.collapsed ~ .zidebar-map .leaflet-left {
+      left: 50px; } }
+  
+  @media (min-width: 768px) {
+    .zidebar-right ~ .zidebar-map .leaflet-right {
+      transition: right 500ms; } }
+  
+  @media (min-width: 768px) and (max-width: 991px) {
+    .zidebar-right ~ .zidebar-map .leaflet-right {
+      right: 315px; } }
+  
+  @media (min-width: 992px) and (max-width: 1199px) {
+    .zidebar-right ~ .zidebar-map .leaflet-right {
+      right: 400px; } }
+  
+  @media (min-width: 1200px) {
+    .zidebar-right ~ .zidebar-map .leaflet-right {
+      right: 470px; } }
+  
+  @media (min-width: 768px) {
+    .zidebar-right.collapsed ~ .zidebar-map .leaflet-right {
+      right: 50px; } }
