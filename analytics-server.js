@@ -15,7 +15,7 @@ var passport        = require('passport')
 var LocalStrategy   = require('passport-local').Strategy
 global.config = config;
 // Service Port
-var port = config.port ||  52720
+var port = config.port
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'))
@@ -102,6 +102,6 @@ app.set('permission', {
 });
 
 // Set
-app.listen(port, function () {
+app.listen(process.env.PORT || port, function () {
     console.log(pkg.name,`listening on http://localhost:${port}`)
 })
