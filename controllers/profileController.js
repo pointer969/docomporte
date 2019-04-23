@@ -26,7 +26,7 @@ exports.list = function(req, res) {
           Profile.count().exec(function(err, count){
               if (count > 0) {
                     res.render('profiles/index',
-                    { title: 'DriveOn Integrator | Perfil de Usuário', 
+                    { title: 'Comporte Score | Perfil de Usuário', 
                         list: profiles,
                         user_info: req.user,
                         baseuri: baseurl,

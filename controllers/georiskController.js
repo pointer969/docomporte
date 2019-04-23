@@ -27,7 +27,7 @@ georiskController.list = function(req, res) {
           Georisk.count().exec(function(err, count){
               if (count > 0) {
                     res.render('georisks/index',
-                    { title: 'DriveOn Integrator | Zonas de Risco', 
+                    { title: 'Comporte Score | Zonas de Risco', 
                         list: georisks,
                         user_info: req.user,
                         baseuri: baseurl,

@@ -120,7 +120,7 @@ userController.list = function(req, res) {
             if (count > 0) {
                    res.render('users/index',
                     { 
-                      title: 'DriveOn Integrator | Usuários', 
+                      title: 'Comporte Score | Usuários', 
                       list: users,
                       user_info: uinfo,
                       baseuri: baseurl,

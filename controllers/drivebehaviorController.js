@@ -38,7 +38,7 @@ var drivebehaviorController = {}
                 Carvars.find({active:true}).exec(function(error, idxvars){ 
                   console.log('Carros:' +  carss);                   
                         res.render('drivebehavior/index',
-                        { title: 'DriveOn Integrator | Score', 
+                        { title: 'Comporte Score | Score', 
                             veiculos: carss,
                             titles: idxvars,
                             user_info: req.user,
@@ -176,7 +176,7 @@ var drivebehaviorController = {}
               
                   console.log('Carros:' +  carss);                   
                         res.render('drivebehavior/index',
-                        { title: 'DriveOn Integrator | Score', 
+                        { title: 'Comporte Score | Score', 
                             veiculos: carss,
                             titles: idxvars,
                             user_info: req.user,

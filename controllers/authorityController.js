@@ -26,7 +26,7 @@ exports.list = function(req, res) {
           Authority.count().exec(function(err, count){
               if (count > 0) {
                     res.render('authorities/index',
-                    { title: 'DriveOn Integrator | Autoridades de Usuário', 
+                    { title: 'Comporte Score | Autoridades de Usuário', 
                         list: authorities,
                         user_info: req.user,
                         baseuri: baseurl,

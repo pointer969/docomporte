@@ -32,7 +32,7 @@ deviceController.list = function(req, res) {
           Device.count().exec(function(err, count){
               if (count > 0) {
                     res.render('devices/index',
-                    { title: 'DriveOn Integrator | Devices', 
+                    { title: 'Comporte Score | Devices', 
                         list: devices,
                         user_info: req.user,
                         baseuri: baseurl,
@@ -292,7 +292,7 @@ deviceController.setuplist = function(req, res){
       .find({active:true}, function(err, devices){
         Device.count().exec(function(err, count){            
                   res.render('devices/setup',
-                  { title: 'DriveOn Integrator | Setup Devices', 
+                  { title: 'Comporte Score | Setup Devices', 
                       list: devices,
                       user_info: req.user,
                       baseuri: baseurl,

@@ -28,7 +28,7 @@ exports.list = function(req, res) {
           Calcvar.count().exec(function(err, count){
               if (count > 0) {
                     res.render('calcvars/index',
-                    { title: 'DriveOn Integrator | Variáveis para Cálculo', 
+                    { title: 'Comporte Score | Variáveis para Cálculo', 
                         list: calcvars,
                         user_info: req.user,
                         baseuri: baseurl,

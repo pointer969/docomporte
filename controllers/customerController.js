@@ -26,7 +26,7 @@ exports.list = function(req, res) {
           Customer.count().exec(function(err, count){
               if (count > 0) {
                     res.render('customers/index',
-                    { title: 'DriveOn Integrator | Drivers', 
+                    { title: 'Comporte Score | Drivers', 
                         list: customers,
                         user_info: req.user,
                         baseuri: baseurl,

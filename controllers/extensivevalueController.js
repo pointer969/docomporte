@@ -38,7 +38,7 @@ extensivevalueController.list = function(req, res) {
               if (count > 0) {
                   // console.log('Debug:' + extensivevalues)
                     res.render('extensivevalues/index',
-                    { title: 'DriveOn Integrator | Valores Extensivos', 
+                    { title: 'Comporte Score | Valores Extensivos', 
                         list: extensivevalues,
                         user_info: req.user,
                         baseuri: baseurl,

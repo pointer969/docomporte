@@ -46,7 +46,7 @@ var vehicleController = {}
           Vehicle.count().exec(function(err, count){
               if (count > 0) {
                     res.render('vehicles/index',
-                    { title: 'DriveOn Integrator | Veiculo', 
+                    { title: 'Comporte Score | Veiculo', 
                         list: vehicles,
                         user_info: req.user,
                         baseuri: baseurl,
@@ -382,7 +382,7 @@ var vehicleController = {}
               .exec(function(err, vehicles){
                 Vehicle.count().exec(function(err, count){                    
                           res.render('vehicles/alarms',
-                          { title: 'DriveOn Integrator | Alarmes', 
+                          { title: 'Comporte Score | Alarmes', 
                               list: vehicles,
                               user_info: req.user,
                               baseuri: baseurl,
@@ -409,7 +409,7 @@ var vehicleController = {}
               .exec(function(err, vehicles){
                 Vehicle.count().exec(function(err, count){                    
                           res.render('analytics',
-                          { title: 'DriveOn Integrator', 
+                          { title: 'Comporte Score', 
                               list: vehicles,
                               user_info: req.user,
                               baseuri: baseurl,

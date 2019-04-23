@@ -21,7 +21,7 @@ exports.login = function(req, res) {
 exports.locate = function(req, res) {
   console.log ('locate')
   res.render('locate', {
-    title: 'DriveOn Integrator | Localizar'
+    title: 'Comporte Score | Localizar'
   })
 }
 
@@ -29,7 +29,7 @@ exports.myvehicle = function(req, res) {
   console.log ('lasttrips')
   
   res.render('lasttrips', {
-    title: 'DriveOn Integrator | Último trajeto'
+    title: 'Comporte Score | Último trajeto'
   })
 }
 
@@ -37,14 +37,14 @@ exports.alarmes = function(req, res) {
   console.log ('alarmes')
   
   res.render('ealarms', {
-    title: 'DriveOn Integrator | Alarmes'
+    title: 'Comporte Score | Alarmes'
   })
 }
 
 exports.analytics = function(req, res) {
   console.log ('analytics')  
   res.render('analytics', { 
-    title: 'DriveOn Integrator | Analytics'
+    title: 'Comporte Score | Analytics'
   }) 
 }
 

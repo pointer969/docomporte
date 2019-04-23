@@ -27,7 +27,7 @@ extensiveclassController.list = function(req, res) {
           ExtensiveClass.count().exec(function(err, count){
               if (count > 0) {
                     res.render('extensiveclasses/index',
-                    { title: 'DriveOn Integrator | Tipos Extensivos', 
+                    { title: 'Comporte Score | Tipos Extensivos', 
                         list: extensiveclasses,
                         user_info: req.user,
                         baseuri: baseurl,
