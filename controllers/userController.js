@@ -45,7 +45,7 @@ userController.doRegister = function(req, res) {
  }
 
 userController.login = function(req, res) {
-  res.render('login', {title:'DriveOn Integrator'})
+  res.render('login', {title:'Comporte Score'})
  }
 
 
