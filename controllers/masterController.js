@@ -10,7 +10,7 @@ exports.list = function(req, res){
 
     const page = (req.query.page > 0 ? req.query.page : 1) - 1;
     const _id = req.query.item;
-    const limit = 5;
+    const limit = 3;
 
     var curr = new Date; // get current date
     var first = curr.getDate() - curr.getDay(); // First day is the day of the month - the day of the week
