@@ -54,19 +54,19 @@
     "view-helpers": "^0.1.5",
     "yield": "0.0.6-8"
   },
-  "description": "This project is created from a GitLab [Project Template](https://docs.gitlab.com/ce/gitlab-basics/create-project.html)",
+  "description": "This project is created from a GitLab [Project Template]",
   "main": "analytics-server.js",
   "directories": {
     "lib": "lib"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/driveonauto/analytics.git"
+    "url": "git+https://github.com/pointer969/docomporte.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/driveonauto/analytics/issues"
+    "url": "https://github.com/pointer969/docomporte/issues"
   },
-  "homepage": "https://github.com/driveonauto/analytics#readme"
+  "homepage": "https://github.com/pointer969/docomporte#readme"
 }
