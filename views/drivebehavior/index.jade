@@ -523,9 +523,9 @@ block content
                               tr                                
                                 td Aceleração Brusca
                                 td 0
-                              tr                                
-                                td Esterçamento Brusco
-                                td 0  
+                              //- tr                                
+                              //-   td Esterçamento Brusco
+                              //-   td 0  
                               tr                                
                                 td Velocidade(Km/h) Acima do Limite em Curva (Ex: Velocidade[Máx. Permitido no trecho] )
                                 td 2
@@ -585,7 +585,7 @@ block content
                                 td 05:29:50
                               tr                                
                                 td KM Rodado
-                                td 391                                                                                            
+                                td 33                                                                                            
                        if (pages > 1)
                         ul.pagination
                           != createPagination(pages, page)  
@@ -737,58 +737,55 @@ block content
                                         var ui = H.ui.UI.createDefault(map, defaultLayers);
                                         addPolylineToMap(map);                                                
                               tr                                
-                                td Turno (Santo André[Sunrise 5:29:46 am / Sunset 6:12:45 pm] -   Embu das Artes[Sunrise 5:30:58 am / Sunset 6:13:53 pm]) by Sunrise-Sunset.org
-                                td Diurno 04:13:50 / Noturno : 01:16:00       
-                              tr                                
                                 td Repetição de trecho no dia
                                 td 1
                               tr                                
                                 td Tempo de direção em riscos
                                 td 0   
                               tr                                
-                                td Pernoite
+                                td Direção a noite
                                 td 0                                                                                         
                        if (pages > 1)
                         ul.pagination
                           != createPagination(pages, page)   
-            .row
-              .col-md-12
-                  .card
-                    .card-header
-                      i.fa.fa-align-justify
-                      |  Comportamento de Manutenção - Detalhamento
-                    .card-body   
-                      != messages()  
-                      table.table.table-striped
-                        thead
-                          tr
-                            th Índice
-                            th Valor                          
-                        tbody                             
-                              tr                                
-                                td DTCs
-                                td 0            
-                              tr                                
-                                td Nível Bateria
-                                td 0       
-                              tr                                
-                                td Nível de Oléo de Motor
-                                td 2.94
-                              tr                                
-                                td Freios
-                                td 7%                                  
-                              tr                                
-                                td Combustível
-                                td 139
-                              tr                                
-                                td Temperatura do Bloco do Motor
-                                td 0 
-                              tr                                
-                                td Tempo de direção
-                                td 05:29:50  
-                              tr                                
-                                td KM Rodado
-                                td 391                                                                                                                         
-                       if (pages > 1)
-                        ul.pagination
-                          != createPagination(pages, page)                                                                                
+            //- .row
+            //-   .col-md-12
+            //-       .card
+            //-         .card-header
+            //-           i.fa.fa-align-justify
+            //-           |  Comportamento de Manutenção - Detalhamento
+            //-         .card-body   
+            //-           != messages()  
+            //-           table.table.table-striped
+            //-             thead
+            //-               tr
+            //-                 th Índice
+            //-                 th Valor                          
+            //-             tbody                             
+            //-                   tr                                
+            //-                     td DTCs
+            //-                     td 0            
+            //-                   tr                                
+            //-                     td Nível Bateria
+            //-                     td 0       
+            //-                   tr                                
+            //-                     td Nível de Oléo de Motor
+            //-                     td 2.94
+            //-                   tr                                
+            //-                     td Freios
+            //-                     td 7%                                  
+            //-                   tr                                
+            //-                     td Combustível
+            //-                     td 139
+            //-                   tr                                
+            //-                     td Temperatura do Bloco do Motor
+            //-                     td 0 
+            //-                   tr                                
+            //-                     td Tempo de direção
+            //-                     td 05:29:50  
+            //-                   tr                                
+            //-                     td KM Rodado
+            //-                     td 391                                                                                                                         
+                      //-  if (pages > 1)
+                      //-   ul.pagination
+                      //-     != createPagination(pages, page)                                                                                
