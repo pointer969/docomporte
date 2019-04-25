@@ -527,20 +527,10 @@ block content
                               //-   td Esterçamento Brusco
                               //-   td 0  
                               tr                                
-                                td Velocidade(Km/h) Acima do Limite em Curva (Ex: Velocidade[Máx. Permitido no trecho] )
-                                td 2
+                                td(colspan=2) Velocidade(Km/h) Acima do Limite em Curva (Ex: Velocidade[Máx. Permitido no trecho] )
                                  .card                                       
                                       #mapContainer1(style='width: 500px; height: 400px; background: white')                                       
                                       script(type='text/javascript').
-                                        //- function addPolylineToMap(map) {
-                                        //-     var lineString = new H.geo.LineString();
-                                        //-     lineString.pushPoint({lat:-23.753443, lng:-46.538945});
-                                        //-     lineString.pushPoint({lat:-23.801388, lng:-46.669373});
-
-                                        //-     map.addObject(new H.map.Polyline(
-                                        //-       lineString, { style: { lineWidth: 4 }}
-                                        //-     ));
-                                        //-   }
                                         var platform = new H.service.Platform({
                                           app_id: 'YevpXNgekiGoMvb2Wge6',
                                           app_code: '6jK4ow-mZzPGv8k3_4Yd-A'
@@ -604,8 +594,7 @@ block content
                             th Valor                          
                         tbody                             
                               tr                                
-                                td Geolocalização
-                                td 
+                                td(colspan=2) Geolocalização
                                   .card                                       
                                       #mapContainer(style='width: 500px; height: 400px; background: white')                                       
                                       script(type='text/javascript').
