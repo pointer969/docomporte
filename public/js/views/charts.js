@@ -2,7 +2,8 @@ $(function (){
   // 'use strict';
   var dongle = '3WN-16010056';
   var maininfo = getMotorTemperature(dongle);
-   
+  
+  alert('Entrou em chart');
   // // 1.Bat Lvl
   // var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
   // var lineChartData = {
