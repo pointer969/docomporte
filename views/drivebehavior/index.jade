@@ -19,12 +19,6 @@ block content
           li.breadcrumb-item.active Score 
         .container-fluid
           .animated.fadeIn
-            //- .row
-            //-   .jumbotron.jumbotron-fluid
-            //-     .container
-            //-       h1.display-4 Drive On Score
-            //-       p.lead
-            //-         | Usuário: #{ucustomer}
             .row               
                 .col-sm-6.col-lg-3
                    .card
@@ -220,37 +214,7 @@ block content
             //-                - var chassi = veiculos[0].FLEETVEHICLE.VEHICLENUMBER;
             //-                - var fleetmobile= veiculos[0].FLEETVEHICLE.INSMSISDN;
             //-                   #VehicleDtl Placa: #{vei} - Mobile : #{fleetmobile} 
-            //-         .chart-wrapper.px-3(style='height:45px;')      
-            //- .row
-            //-   .col-md-12
-            //-       .card
-            //-         .card-header
-            //-           i.fa.fa-align-justify
-            //-           |  Score
-            //-         .card-body   
-            //-           != messages()                       
-            //-           table.table.table-striped
-            //-             thead
-            //-               tr
-            //-                 th Slots
-            //-                 th Peso
-            //-                 th Score (0~10)                          
-            //-             tbody                             
-            //-                   tr                                
-            //-                     td Comportamento de Condução
-            //-                     td 6.2
-            //-                     td 6.7                                  
-            //-                   tr                                
-            //-                     td Riscos
-            //-                     td 2.8
-            //-                     td 9.9
-            //-                   tr                                
-            //-                     td Comportamento de Manutenção
-            //-                     td 1.0
-            //-                     td 10                                                                                         
-            //-            if (pages > 1)
-            //-             ul.pagination
-            //-               != createPagination(pages, page)  
+            //-         .chart-wrapper.px-3(style='height:45px;')                   
             .row
               .col-md-12
                 .card-header
@@ -294,6 +258,32 @@ block content
                           responsive: true
                         }
                       });
+            .row
+              .col-md-12
+                  .card
+                    .card-header
+                      i.fa.fa-align-justify
+                      |  Score - Details
+                    .card-body   
+                      table.table.table-striped
+                        thead
+                          tr
+                            th Slots
+                            th Peso
+                            th Score (0~10)                          
+                        tbody                             
+                              tr                                
+                                td Comportamento de Condução
+                                td 6.2
+                                td 6.7                                  
+                              tr                                
+                                td Riscos
+                                td 2.8
+                                td 9.9
+                              tr                                
+                                td Comportamento de Manutenção
+                                td 1.0
+                                td 10                                
             //- .row
             //-   .col-md-12
             //-       .card
