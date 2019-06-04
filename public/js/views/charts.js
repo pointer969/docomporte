@@ -73,6 +73,7 @@ $(function (){
         ]
       }]
     };
+    
   var ctx = document.getElementById('canvas-3').getContext("2d");;
   var chart = new Chart(ctx, {
       type: 'doughnut',
