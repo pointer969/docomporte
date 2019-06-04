@@ -11,7 +11,7 @@ block header
   script(src='/js/utils.js')
   
 block content
-    
+  - var ucustomer = user.customer;    
   main.main
         // Breadcrumb
         ol.breadcrumb
@@ -19,6 +19,13 @@ block content
           li.breadcrumb-item.active Score 
         .container-fluid
           .animated.fadeIn
+            .row
+              .jumbotron.jumbotron-fluid
+                .container
+                  h1.display-4 Drive On Score
+                  p.lead
+                    | Usuário: #{ucustomer}
+                    | Veículo: JXY-9999
             .row               
                 .col-sm-6.col-lg-3
                    .card
