@@ -50,15 +50,14 @@ block content
                                 ]
                               }]
                             };
-
-                          var ctx = document.getElementById('canvas-3').getContext("2d");
-                          var chart = new Chart(ctx, {
-                              type: 'doughnut',
-                              data: doughnutData,
-                              options: {
-                                responsive: true
-                              }
-                            });
+                            var ctx = document.getElementById('canvas-3').getContext("2d");
+                            var chart = new Chart(ctx, {
+                                type: 'doughnut',
+                                data: doughnutData,
+                                options: {
+                                  responsive: true
+                                }
+                              });
             //-       .card.text-white.bg-primary
             //-         .card-body.pb-0                  
             //-           h4.mb-3 
@@ -74,9 +73,7 @@ block content
             //-                   url: "/chartScoreEvolution",
             //-                   dataType: "json",
             //-                   crossDomain: "false",
-            //-                   contentType: "application/json; charset=UTF-8"                                                             
-            //-                 }).done(function ( data ) {
-                                        
+            //-                   contentType: "application/json; charset=UTF-8"                                                                         //-                 }).done(function ( data ) {                                        
             //-                     var lbl = []      
             //-                     var dts = []
             //-                     //- $.each(data.data, function(index, value) { 
@@ -84,7 +81,6 @@ block content
             //-                     //- var cumTot   = value.ScoreValue
             //-                     var rawDrecv =   "2019-04-23"
             //-                     var cumTot   = "7.926"
-                                
             //-                     lbl.push(rawDrecv);
             //-                     dts.push(cumTot);
                                 
