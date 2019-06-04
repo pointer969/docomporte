@@ -1,16 +1,18 @@
 extends ../layout/default
 
 block header
-  script(src='http://js.api.here.com/v3/3.0/mapsjs-core.js', type='text/javascript', charset='utf-8')
-  script(src='http://js.api.here.com/v3/3.0/mapsjs-service.js', type='text/javascript', charset='utf-8')
+  //- script(src='http://js.api.here.com/v3/3.0/mapsjs-core.js', type='text/javascript', charset='utf-8')
+  //- script(src='http://js.api.here.com/v3/3.0/mapsjs-service.js', type='text/javascript', charset='utf-8')
 
-  script(type='text/javascript', src='https://js.api.here.com/v3/3.0/mapsjs-ui.js')
-  script(type='text/javascript', src='https://js.api.here.com/v3/3.0/mapsjs-mapevents.js')
+  //- script(type='text/javascript', src='https://js.api.here.com/v3/3.0/mapsjs-ui.js')
+  //- script(type='text/javascript', src='https://js.api.here.com/v3/3.0/mapsjs-mapevents.js')
 
   script(src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js')
   script(src='/js/views/charts.js')
   script(src='/js/utils.js')
   
+block script
+  script(async='', defer='', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAQqvk0uMN9m6V0GMjelG_lySoAaAGZJqM&callback=initMap')
 block content
   - var ucustomer = ulogo;   
   main.main
@@ -659,46 +661,76 @@ block content
                                  .card                                       
                                       #mapContainer1(style='width: 500px; height: 400px; background: white')                                       
                                       script(type='text/javascript').
-                                        var platform = new H.service.Platform({
-                                          app_id: 'hbzkXAp8dpY2IohWSPgV',
-                                          app_code: 'dnp-PHAyKmsrlf9D9r2Gjg'
-                                        });
+                                        var map;
+                                        function initMap() {
+                                          map = new google.maps.Map(document.getElementById('mapContainer1'), {
+                                            zoom: 11,
+                                            center: new google.maps.LatLng(-23.6848062,-46.6916117),
+                                            mapTypeId: 'terrain'
+                                          });
 
-                                        var pixelRatio = window.devicePixelRatio || 1;
-                                        var defaultLayers = platform.createDefaultLayers({
-                                          tileSize: pixelRatio === 1 ? 256 : 512,
-                                          ppi: pixelRatio === 1 ? undefined : 320
-                                        });
+                                          //- // Create a <script> tag and set the USGS URL as the source.
+                                          //- var script = document.createElement('script');
+                                          //- // This example uses a local copy of the GeoJSON stored at
+                                          //- // http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp
+                                          //- script.src = 'https://developers.google.com/maps/documentation/javascript/examples/json/earthquake_GeoJSONP.js';
+                                          //- document.getElementsByTagName('head')[0].appendChild(script);
+                                        }
 
-                                        var map = new H.Map(document.getElementById('mapContainer1'),
-                                          defaultLayers.normal.map,{
-                                          center: {lat:-23.6848062, lng:-46.6916117},
-                                          zoom: 11,
-                                          pixelRatio: pixelRatio
-                                        });
-                                        var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
-                                        var ui = H.ui.UI.createDefault(map, defaultLayers);
-                                        //- addPolylineToMap(map);   
-                                        var svgMarkup = '<svg width="34" height="34" ' +
-                                                        'xmlns="http://www.w3.org/2000/svg">' +
-                                                        '<rect stroke="white" fill="#1b468d" x="1" y="1" width="70" ' +
-                                                        'height="60" /><text x="12" y="18" font-size="12pt" ' +
-                                                        'font-family="Arial" font-weight="normal" text-anchor="middle" ' +
-                                                        'fill="white">99</text></svg>';  
-                                        var icon = new H.map.Icon(svgMarkup),
-                                          coords = {lat:-23.753443, lng:-46.538945},
-                                          marker = new H.map.Marker(coords, {icon: icon});    
-                                        map.addObject(marker);  
-                                        var svgMarkup2 = '<svg width="34" height="34" ' +
-                                                        'xmlns="http://www.w3.org/2000/svg">' +
-                                                        '<rect stroke="white" fill="#1b468d" x="1" y="1" width="70" ' +
-                                                        'height="60" /><text x="12" y="18" font-size="12pt" ' +
-                                                        'font-family="Arial" font-weight="normal" text-anchor="middle" ' +
-                                                        'fill="white">103</text></svg>';  
-                                        var icon2 = new H.map.Icon(svgMarkup2),
-                                          coords = {lat:-23.801388, lng:-46.669373},
-                                          marker2 = new H.map.Marker(coords, {icon: icon2});   
-                                        map.addObject(marker2);              
+                                        // Loop through the results array and place a marker for each
+                                        // set of coordinates.
+                                        window.eqfeed_callback = function(results) {
+                                          for (var i = 0; i < results.features.length; i++) {
+                                            var coords = results.features[i].geometry.coordinates;
+                                            var latLng = new google.maps.LatLng(coords[1],coords[0]);
+                                            var marker = new google.maps.Marker({
+                                              position: latLng,
+                                              map: map
+                                            });
+                                          }
+                                        }
+
+
+                                        //- var platform = new H.service.Platform({
+                                        //-   app_id: 'hbzkXAp8dpY2IohWSPgV',
+                                        //-   app_code: 'dnp-PHAyKmsrlf9D9r2Gjg'
+                                        //- });
+
+                                        //- var pixelRatio = window.devicePixelRatio || 1;
+                                        //- var defaultLayers = platform.createDefaultLayers({
+                                        //-   tileSize: pixelRatio === 1 ? 256 : 512,
+                                        //-   ppi: pixelRatio === 1 ? undefined : 320
+                                        //- });
+
+                                        //- var map = new H.Map(document.getElementById('mapContainer1'),
+                                        //-   defaultLayers.normal.map,{
+                                        //-   center: {lat:-23.6848062, lng:-46.6916117},
+                                        //-   zoom: 11,
+                                        //-   pixelRatio: pixelRatio
+                                        //- });
+                                        //- var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
+                                        //- var ui = H.ui.UI.createDefault(map, defaultLayers);
+                                        //- //- addPolylineToMap(map);   
+                                        //- var svgMarkup = '<svg width="34" height="34" ' +
+                                        //-                 'xmlns="http://www.w3.org/2000/svg">' +
+                                        //-                 '<rect stroke="white" fill="#1b468d" x="1" y="1" width="70" ' +
+                                        //-                 'height="60" /><text x="12" y="18" font-size="12pt" ' +
+                                        //-                 'font-family="Arial" font-weight="normal" text-anchor="middle" ' +
+                                        //-                 'fill="white">99</text></svg>';  
+                                        //- var icon = new H.map.Icon(svgMarkup),
+                                        //-   coords = {lat:-23.753443, lng:-46.538945},
+                                        //-   marker = new H.map.Marker(coords, {icon: icon});    
+                                        //- map.addObject(marker);  
+                                        //- var svgMarkup2 = '<svg width="34" height="34" ' +
+                                        //-                 'xmlns="http://www.w3.org/2000/svg">' +
+                                        //-                 '<rect stroke="white" fill="#1b468d" x="1" y="1" width="70" ' +
+                                        //-                 'height="60" /><text x="12" y="18" font-size="12pt" ' +
+                                        //-                 'font-family="Arial" font-weight="normal" text-anchor="middle" ' +
+                                        //-                 'fill="white">103</text></svg>';  
+                                        //- var icon2 = new H.map.Icon(svgMarkup2),
+                                        //-   coords = {lat:-23.801388, lng:-46.669373},
+                                        //-   marker2 = new H.map.Marker(coords, {icon: icon2});   
+                                        //- map.addObject(marker2);              
                               tr                                
                                 td Tempo Direção
                                 td 05:29:50
