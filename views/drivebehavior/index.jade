@@ -1,16 +1,9 @@
 extends ../layout/default
 
 block header
-  //- script(src='http://js.api.here.com/v3/3.0/mapsjs-core.js', type='text/javascript', charset='utf-8')
-  //- script(src='http://js.api.here.com/v3/3.0/mapsjs-service.js', type='text/javascript', charset='utf-8')
-
-  //- script(type='text/javascript', src='https://js.api.here.com/v3/3.0/mapsjs-ui.js')
-  //- script(type='text/javascript', src='https://js.api.here.com/v3/3.0/mapsjs-mapevents.js')
-
   script(src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js')
   script(src='/js/views/charts.js')
-  script(src='/js/utils.js')
- 
+  script(src='/js/utils.js') 
   script(async='', defer='', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAQqvk0uMN9m6V0GMjelG_lySoAaAGZJqM&callback=initMap')
 
 block content
@@ -681,7 +674,7 @@ block content
                                         var map;
                                         function initMap() {
                                           map = new google.maps.Map(document.getElementById('mapContainer'), {
-                                            zoom: 11,
+                                            zoom: 3,
                                             center: new google.maps.LatLng(-23.6848062,-46.6916117),
                                             mapTypeId: 'terrain'
                                           });
