@@ -656,35 +656,35 @@ block content
                               //- tr                                
                               //-   td Esterçamento Brusco
                               //-   td 0  
-                              tr                                
-                                td(colspan=2) Velocidade(Km/h) Acima do Limite em Curva (Ex: Velocidade[Máx. Permitido no trecho] )
-                                 .card                                       
-                                      #mapContainer1(style='width: 500px; height: 400px; background: white')                                        
-                                      script(type='text/javascript').
-                                        var map;
-                                        function initMap() {
-                                          map = new google.maps.Map(document.getElementById('mapContainer1'), {
-                                            zoom: 11,
-                                            center: new google.maps.LatLng(-23.6848062,-46.6916117),
-                                            mapTypeId: 'terrain'
-                                          });
+                              //- tr                                
+                              //-   td(colspan=2) Velocidade(Km/h) Acima do Limite em Curva (Ex: Velocidade[Máx. Permitido no trecho] )
+                              //-    .card                                       
+                              //-         #mapContainer1(style='width: 500px; height: 400px; background: white')                                        
+                              //-         script(type='text/javascript').
+                              //-           var map;
+                              //-           function initMap() {
+                              //-             map = new google.maps.Map(document.getElementById('mapContainer1'), {
+                              //-               zoom: 11,
+                              //-               center: new google.maps.LatLng(-23.6848062,-46.6916117),
+                              //-               mapTypeId: 'terrain'
+                              //-             });
 
-                                           var flightPlanCoordinates = [
-                                            {lat: 37.772, lng: -122.214},
-                                            {lat: 21.291, lng: -157.821},
-                                            {lat: -18.142, lng: 178.431},
-                                            {lat: -27.467, lng: 153.027}
-                                          ];
-                                          var flightPath = new google.maps.Polyline({
-                                            path: flightPlanCoordinates,
-                                            geodesic: true,
-                                            strokeColor: '#FF0000',
-                                            strokeOpacity: 1.0,
-                                            strokeWeight: 2
-                                          });
+                              //-              var flightPlanCoordinates = [
+                              //-               {lat: 37.772, lng: -122.214},
+                              //-               {lat: 21.291, lng: -157.821},
+                              //-               {lat: -18.142, lng: 178.431},
+                              //-               {lat: -27.467, lng: 153.027}
+                              //-             ];
+                              //-             var flightPath = new google.maps.Polyline({
+                              //-               path: flightPlanCoordinates,
+                              //-               geodesic: true,
+                              //-               strokeColor: '#FF0000',
+                              //-               strokeOpacity: 1.0,
+                              //-               strokeWeight: 2
+                              //-             });
 
-                                          flightPath.setMap(map);
-                                        }
+                              //-             flightPath.setMap(map);
+                              //-           }
 
                                         // Loop through the results array and place a marker for each
                                         // set of coordinates.
@@ -768,10 +768,11 @@ block content
                                   .card                                       
                                       #mapContainer(style='width: 500px; height: 400px; background: white')                                       
                                       script(type='text/javascript').
+                                        var map;
                                         function initMap() {
-                                          var map = new google.maps.Map(document.getElementById('mapContainer'), {
-                                            zoom: 3,
-                                            center: lat:-23.719697, lng:-46.556778},
+                                          map = new google.maps.Map(document.getElementById('mapContainer1'), {
+                                            zoom: 11,
+                                            center: new google.maps.LatLng(-23.6848062,-46.6916117),
                                             mapTypeId: 'terrain'
                                           });
 
@@ -885,7 +886,7 @@ block content
                                           });
 
                                           flightPath.setMap(map);
-                                         }
+                                        }                                        
                               tr                                
                                 td Repetição de trecho no dia
                                 td 1
