@@ -264,15 +264,14 @@ block content
                         div(style='position:absolute;width:200%;height:200%;left:0; top:0')
                     canvas#canvas-1.chartjs-render-monitor(width='770', height='384', style='display: block; width: 770px; height: 384px;')
                     script.
-                      var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
                       var lineChartData = {
                           labels : ['01/06','02/06','03/06','04/06'],
                           datasets : [
                             {
                               label: 'Score - Junho',
-                              backgroundColor : 'rgba(220, 220, 220, 0.2)',
+                              backgroundColor : 'rgba(178, 228, 214, 0.7)',
                               borderColor : 'rgba(220,220,220,1)',
-                              pointBackgroundColor : 'rgba(220,220,220,1)',
+                              pointBackgroundColor : 'rgba(178, 228, 100, 0.7)',
                               pointBorderColor : '#fff',
                               data : [9.11,9.01,8.9,8.27]
                             },
