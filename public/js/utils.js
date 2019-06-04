@@ -156,7 +156,7 @@ function doDate()
 
         var now = new Date();
 
-        str += "Today is: " + days[now.getDay()] + ", " + now.getDate() + " " + months[now.getMonth()] + " " + now.getFullYear() + " " + now.setHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
+        str += days[now.getDay()] + ", " + now.getDate() + " " + months[now.getMonth()] + " " + now.getFullYear() + " " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
         var updateTime = function() { setTimeout("doDate()", 1000); }
 
         document.getElementById("todaysDate").innerHTML = str;
