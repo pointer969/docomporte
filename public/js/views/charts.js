@@ -54,32 +54,32 @@ $(function (){
   // });
 
 
-  var doughnutData = {
-      labels: [
-        'Condução',
-        'Falhas'
-      ],
-      datasets: [{
-        data: [8.27, 0],
-        backgroundColor: [
-          '#FF6384',
-          '#36A2EB'
-        ],
-        hoverBackgroundColor: [
-          '#FF6384',
-          '#36A2EB'
-        ]
-      }]
-    };
+  // var doughnutData = {
+  //     labels: [
+  //       'Condução',
+  //       'Falhas'
+  //     ],
+  //     datasets: [{
+  //       data: [8.27, 0],
+  //       backgroundColor: [
+  //         '#FF6384',
+  //         '#36A2EB'
+  //       ],
+  //       hoverBackgroundColor: [
+  //         '#FF6384',
+  //         '#36A2EB'
+  //       ]
+  //     }]
+  //   };
 
-  var ctx = document.getElementById('canvas-3').getContext("2d");;
-  var chart = new Chart(ctx, {
-      type: 'doughnut',
-      data: doughnutData,
-      options: {
-        responsive: true
-      }
-    });
+  // var ctx = document.getElementById('canvas-3').getContext("2d");;
+  // var chart = new Chart(ctx, {
+  //     type: 'doughnut',
+  //     data: doughnutData,
+  //     options: {
+  //       responsive: true
+  //     }
+  //   });
 
 
   // var radarChartData = {

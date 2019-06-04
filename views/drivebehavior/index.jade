@@ -32,9 +32,33 @@ block content
                           .chartjs-size-monitor-shrink(style='position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;')
                             div(style='position:absolute;width:200%;height:200%;left:0; top:0')
                         canvas#canvas-3.chartjs-render-monitor(width='770', height='384', style='display: block; width: 770px; height: 384px;')
- 
+                        script.
+                            var doughnutData = {
+                              labels: [
+                                'Condução',
+                                'Falhas'
+                              ],
+                              datasets: [{
+                                data: [8.27, 0],
+                                backgroundColor: [
+                                  '#FF6384',
+                                  '#36A2EB'
+                                ],
+                                hoverBackgroundColor: [
+                                  '#FF6384',
+                                  '#36A2EB'
+                                ]
+                              }]
+                            };
 
-
+                          var ctx = document.getElementById('canvas-3').getContext("2d");;
+                          var chart = new Chart(ctx, {
+                              type: 'doughnut',
+                              data: doughnutData,
+                              options: {
+                                responsive: true
+                              }
+                            });
             //-       .card.text-white.bg-primary
             //-         .card-body.pb-0                  
             //-           h4.mb-3 
