@@ -103,5 +103,5 @@ app.set('permission', {
 
 // Set
 app.listen(process.env.PORT || port, function () {
-    console.log(pkg.name,`listening on http://localhost:${port}`)
+    console.log(pkg.name,`listening on  port ${port}`)
 })
