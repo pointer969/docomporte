@@ -4,8 +4,7 @@ block header
   script(src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js')
   script(src='/js/views/charts.js')
   script(src='/js/utils.js') 
-  script(async='', defer='', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAQqvk0uMN9m6V0GMjelG_lySoAaAGZJqM&callback=initMap')
-
+  
 block content
   - var ucustomer = ulogo;   
   main.main
@@ -670,6 +669,7 @@ block content
                                 td(colspan=2) Geolocalização
                                   .card                                       
                                       #mapContainer(style='width: 500px; height: 400px; background: white')                                       
+                                      script(async='', defer='', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAQqvk0uMN9m6V0GMjelG_lySoAaAGZJqM&callback=initMap')
                                       script(type='text/javascript').
                                         var map;
                                         function initMap() {
