@@ -585,16 +585,16 @@ block content
                                           window.myLine = new Chart(ctx, config);
                                         };
 
-                                        document.getElementById('randomizeData').addEventListener('click', function() {
-                                          config.data.datasets.forEach(function(dataset) {
-                                            dataset.data = dataset.data.map(function() {
-                                              return randomScalingFactor();
-                                            });
+                                        //- document.getElementById('randomizeData').addEventListener('click', function() {
+                                        //-   config.data.datasets.forEach(function(dataset) {
+                                        //-     dataset.data = dataset.data.map(function() {
+                                        //-       return randomScalingFactor();
+                                        //-     });
 
-                                          });
+                                        //-   });
 
-                                          window.myLine.update();
-                                        });
+                                        //-   window.myLine.update();
+                                        //- });
 
                                         var colorNames = Object.keys(window.chartColors);
                                         document.getElementById('addDataset').addEventListener('click', function() {
@@ -674,7 +674,7 @@ block content
                                         var map;
                                         function initMap() {
                                           map = new google.maps.Map(document.getElementById('mapContainer'), {
-                                            zoom: 3,
+                                            zoom: 14,
                                             center: new google.maps.LatLng(-23.6848062,-46.6916117),
                                             mapTypeId: 'terrain'
                                           });
