@@ -30,5 +30,5 @@ apiController.doLogin = function(req, res){
         res.json(arrayMessage)   
       }
     });
-  })(req, res, next);
+  })(req, res);
 }
