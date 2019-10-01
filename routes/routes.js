@@ -15,6 +15,7 @@ var eclass          =  require("../controllers/extensiveclassController")
 var evalo           =  require("../controllers/extensivevalueController")
 var drivebahavior   = require('../controllers/drivebehaviorController')
 var intSvcs         = require('../controllers/integrationsvcController')
+var apiServices     = require('../controllers/apiController')
 
 // route to login page
 router.get('/login', user.login);
@@ -270,6 +271,11 @@ router.get('/errors/403', function(req, res) {
  
 // 
 // router.get('/runstub', isLoggedIn, currtripinfo.stub);  
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//  API v1.0
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+router.post('/api/login', apiServices.login)
 
 module.exports = router
 
