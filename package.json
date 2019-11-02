@@ -36,7 +36,7 @@
     "leaflet": "^1.2.0",
     "lodash": "^4.17.4",
     "moment": "^2.21.0",
-    "mongoose": "^4.11.13",
+    "mongoose": "^5.7.5",
     "mongoose-activitylogs": "^2.1.15",
     "mongoose-paginate": "^5.0.3",
     "node-fetch": "^1.7.3",
