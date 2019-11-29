@@ -275,7 +275,7 @@ router.get('/errors/403', function(req, res) {
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //  API v1.0
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-router.post('/api/login', apiServices.doLogin)
+// router.post('/api/login', apiServices.doLogin)
 
 module.exports = router
 
