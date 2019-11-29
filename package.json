@@ -32,7 +32,7 @@
     "grappling-hook": "^3.0.0",
     "jade": "^1.11.0",
     "jsonwebtoken": "^7.4.3",
-    "jwt-simple": "^0.5.1",
+    "jwt-simple": "^0.5.3",
     "leaflet": "^1.2.0",
     "lodash": "^4.17.4",
     "moment": "^2.21.0",
