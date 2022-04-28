@@ -15,7 +15,7 @@
     "@types/mongoose": "^4.7.21",
     "@types/passport": "^0.3.4",
     "@types/passport-jwt": "^2.0.24",
-    "async": "^2.5.0",
+    "async": "^2.6.4",
     "bcrypt": "^3.0.6",
     "body-parser": "^1.18.1",
     "chart.js": "^2.7.1",
